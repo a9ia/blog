@@ -15,11 +15,11 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               ssh root@101.201.125.78
+              exit
               cd /root/blog/
-              git clone -f
+              git pull -f
               hexo clean
               hexo g
-              exit
             else
               echo "Not master branch, dry run only"
             fi
