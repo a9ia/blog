@@ -4,9 +4,6 @@ jobs:
     docker:
       - image: circleci/node:latest
     working_directory: ~/blog
-    branches:
-      only:
-        - master
     steps:
       - checkout
       - run: 
@@ -28,5 +25,9 @@ workflows:
   version: 2
   deploy:
     jobs:
-      - build
+      - build:
+        filters:
+          branches:
+            only:
+              - master
   
