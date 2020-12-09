@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/blog
     steps:
       - checkout
-      - run: npm install
+      - run: sudo npm install
       - run: sudo npm install hexo-cli -g
       - run: hexo g
       - save_cache:
@@ -27,7 +27,7 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              rsync -avc ../blog/ $SSH_USER@$SSH_IP:/root/blog/
+              rsync -avc ../blog/public $SSH_USER@$SSH_IP:/root/
             else
               echo "Not master branch, dry run only"
             fi
