@@ -21,7 +21,7 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              sudo rsync -avce /home/circleci/blog $SSH_USER@$SSH_IP:/root/blog/
+              sudo rsync -avzh /home/circleci/blog $SSH_USER@$SSH_IP:/root/blog/
             else
               echo "Not master branch, dry run only"
             fi
