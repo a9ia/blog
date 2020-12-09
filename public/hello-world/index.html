@@ -19,9 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello World - A9ia的个人站</title>
+  <title>Hello, World! - A9ia的个人站</title>
+  
+    <meta name="keywords" content="node 生日快乐 hexo volantis nginx circleCI">
   
 
+  
+    <meta name="description" content="第一次建站始末">
   
 
   <!-- feed -->
@@ -219,7 +223,7 @@
   <div class='top'>
     
     
-      <p class="title">Volantis</p>
+      <p class="title">A9ia</p>
     
     
   </div>
@@ -290,7 +294,7 @@
     
     
       <h1 class="title">
-        Hello World
+        Hello, World!
       </h1>
       <div class='new-meta-box'>
         
@@ -314,7 +318,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月8日</p>
+    <p>发布于：2020年12月9日</p>
   </a>
 </div>
 
@@ -325,7 +329,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Hello World" data-path="/hello-world/">
+      <div id="lc-pv" data-title="Hello, World!" data-path="/Hello-World/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -342,19 +346,13 @@
 
 
   
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  <h1 id="记录一下建站的过程踩过的坑"><a href="#记录一下建站的过程踩过的坑" class="headerlink" title="记录一下建站的过程踩过的坑"></a>记录一下建站的过程踩过的坑</h1><p>白嫖了阿里云的服务器和域名，用hexo+volantis主题+nginx快速搭建了一个网站。<br>后续用github+circleCI实现自动化部署，这个网站就算建成了。</p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a></h1><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>是一个非常快捷的博客框架。</p>
+<p>hexo本身的坑并不多，但是有一些网站初学者难以理解的点</p>
+<ul>
+<li>hexo generate 生成的静态网页是运行在服务器上的，所以当你在个人电脑上打开你会发现加载不了css的静态文件。</li>
+</ul>
+<p>这是因为css的引用是<code>/css/...</code>，在你的电脑上会被浏览器渲染成所在文件目录的根目录上，比如在E盘，他就会去<code>E://css/</code>里面找，自然是找不到的，当你在服务器端运行，经过nginx路由分发，他就能在web服务的根目录下找到css文件。</p>
 
   
   
@@ -372,7 +370,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://101.201.125.78/hello-world/>http://101.201.125.78/hello-world/</a></p>
+                <p>本文永久链接是：<a href=http://101.201.125.78/Hello-World/>http://101.201.125.78/Hello-World/</a></p>
               
             
           </blockquote>
@@ -389,10 +387,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-08T15:02:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-09T08:39:05+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月8日</p>
+    <p>更新于：2020年12月9日</p>
   </a>
 </div>
 
@@ -400,6 +398,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/node-%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90-hexo-volantis-nginx-circleCI/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>node 生日快乐 hexo volantis nginx circleCI</p></a></div>
+
 
         
       
@@ -411,7 +412,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://101.201.125.78/hello-world/&title=Hello World - A9ia的个人站&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://101.201.125.78/Hello-World/&title=Hello, World! - A9ia的个人站&summary=第一次建站始末"
           
           >
           
@@ -423,7 +424,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://101.201.125.78/hello-world/&title=Hello World - A9ia的个人站&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://101.201.125.78/Hello-World/&title=Hello, World! - A9ia的个人站&summary=第一次建站始末"
           
           >
           
@@ -435,7 +436,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://101.201.125.78/hello-world/&title=Hello World - A9ia的个人站&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://101.201.125.78/Hello-World/&title=Hello, World! - A9ia的个人站&summary=第一次建站始末"
           
           >
           
@@ -462,16 +463,6 @@
   
   
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/test/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>test</p>
-          <p class='content'></p>
-        </a>
-      
-      
-    </div>
   
 </article>
 
@@ -511,7 +502,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        
     </div>
   </section>
 
@@ -531,7 +522,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Hello World";
+  pdata.postTitle="Hello, World!";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

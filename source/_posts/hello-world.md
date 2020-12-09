@@ -1,39 +1,23 @@
 ---
-title: Hello World
-author: A9ia
+title: 'Hello, World!'
+date: 2020-12-09 08:19:35
+tags: 'node 生日快乐 hexo volantis nginx circleCI'
+excerpt: '第一次建站始末'
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
 
-### Create a new post
+# 记录一下建站的过程踩过的坑
 
-``` bash
-$ hexo new "My New Post"
-```
+白嫖了阿里云的服务器和域名，用hexo+volantis主题+nginx快速搭建了一个网站。
+后续用github+circleCI实现自动化部署，这个网站就算建成了。
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+# [hexo](https://hexo.io/zh-cn/)
 
-### Run server
+[hexo](https://hexo.io/zh-cn/)是一个非常快捷的博客框架。
 
-``` bash
-$ hexo server
-```
 
-More info: [Server](https://hexo.io/docs/server.html)
+hexo本身的坑并不多，但是有一些网站初学者难以理解的点
++ hexo generate 生成的静态网页是运行在服务器上的，所以当你在个人电脑上打开你会发现加载不了css的静态文件。
 
-### Generate static files
+这是因为css的引用是`/css/...`，在你的电脑上会被浏览器渲染成所在文件目录的根目录上，比如在E盘，他就会去`E://css/`里面找，自然是找不到的，当你在服务器端运行，经过nginx路由分发，他就能在web服务的根目录下找到css文件。
 
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
