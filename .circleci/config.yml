@@ -21,7 +21,6 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              chgrp admin /home/backup
               chmod g=rx /home/backup
               sudo rsync -avce /home/circleci/blog $SSH_USER@$SSH_IP:/root/blog/
             else
