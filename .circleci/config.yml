@@ -15,7 +15,9 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               ssh root@101.201.125.78
+              echo "fuck"
               cd /root/blog/
+              echo "fuck2"
               git pull -f
               hexo clean
               hexo g
