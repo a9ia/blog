@@ -21,10 +21,9 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              sudo ls -l /home/circleci/blog/
-              chgrp circleci /home/circleci/blog/
-              chmod g=rwx /home/circleci/blog/
-              sudo rsync -avce /home/circleci/blog/ $SSH_USER@$SSH_IP:/root/blog/
+              chgrp circleci /home/backup
+              chmod g=rx /home/backup
+              rsync -avce /home/circleci/blog/ $SSH_USER@$SSH_IP:/root/blog/
             else
               echo "Not master branch, dry run only"
             fi
