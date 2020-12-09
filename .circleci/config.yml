@@ -6,13 +6,6 @@ jobs:
     working_directory: ~/blog
     steps:
       - checkout
-      - run: npm install
-      - run: 
-         command: |
-          sudo npm install -g hexo-cli
-          hexo clean
-          hexo g
-      - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install -y openssh-server
       - add_ssh_keys:
           fingerprints:
             - "f9:a5:6b:ad:73:78:5b:50:ab:e7:30:ca:03:50:8d:59"
@@ -21,9 +14,11 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              chgrp circleci /home/circleci/blog/
-              chmod 777 /home/circleci/blog/
-              rsync -avzh /home/circleci/blog/ $SSH_USER@$SSH_IP:/root/blog/
+              ssh $SSH_USER@$SSH_IP
+              cd /root/blog/
+              git clone -f
+              hexo clean
+              hexo g
             else
               echo "Not master branch, dry run only"
             fi
