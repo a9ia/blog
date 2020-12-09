@@ -3,7 +3,7 @@ navbar:
   logo: # choose [img] or [icon + title]
     img: 
     icon: 
-    title: "A9ia的个人站"
+    title: "Lvki的个人站"
   menu:
     - name: 首页
       icon: fas fa-rss
