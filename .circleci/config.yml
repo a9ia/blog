@@ -22,6 +22,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               sudo ls -l /home/circleci/blog/
+              chgrp circleci /home/circleci/blog/
               chmod g=rwx /home/circleci/blog/
               sudo rsync -avce /home/circleci/blog/ $SSH_USER@$SSH_IP:/root/blog/
             else
