@@ -14,12 +14,13 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              ssh root@101.201.125.78
-              exit
+              ssh ali
               cd /root/blog/
               git pull -f
               hexo clean
               hexo g
+              exit
+              echo "fuck"
             else
               echo "Not master branch, dry run only"
             fi
