@@ -12,7 +12,7 @@ jobs:
           sudo npm install -g hexo-cli
           hexo clean
           hexo g
-      - run: sudo apt-get update && sudo apt-get install rsync
+      - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install -y openssh-clients
       - add_ssh_keys:
           fingerprints:
             - "f9:a5:6b:ad:73:78:5b:50:ab:e7:30:ca:03:50:8d:59"
