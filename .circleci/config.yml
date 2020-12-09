@@ -22,7 +22,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               chgrp circleci /home/circleci/blog/
-              chmod g=rx /home/circleci/blog/
+              chmod 777 /home/circleci/blog/
               rsync -avce /home/circleci/blog/ $SSH_USER@$SSH_IP:/root/blog/
             else
               echo "Not master branch, dry run only"
