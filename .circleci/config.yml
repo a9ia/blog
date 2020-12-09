@@ -6,6 +6,19 @@ jobs:
     working_directory: ~/blog
     steps:
       - checkout
+      - run: npm install
+      - run: npm install hexo-cli -save
+      - save_cache:
+        key: v1-dependencies-{{ checksum "package.json" }}
+        paths:
+          - node_modules
+      - run: hexo g
+      - run: echo 'deploying'
+      - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install openssh-client
+      - restore_cache:
+        keys: 
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies
       - add_ssh_keys:
           fingerprints:
             - "f9:a5:6b:ad:73:78:5b:50:ab:e7:30:ca:03:50:8d:59"
@@ -14,15 +27,7 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              ssh root@101.201.125.78
-              echo "fuck"
-              cd /root/blog/
-              echo "fuck2"
-              git pull -f
-              hexo clean
-              hexo g
-              exit
-              echo "fuck"
+              rsync -avce ../ $SSH_USER@$SSH_IP:/root/blog/
             else
               echo "Not master branch, dry run only"
             fi
