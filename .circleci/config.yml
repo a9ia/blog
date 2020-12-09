@@ -19,6 +19,7 @@ jobs:
               git clone -f
               hexo clean
               hexo g
+              exit
             else
               echo "Not master branch, dry run only"
             fi
