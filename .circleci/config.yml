@@ -9,10 +9,11 @@ jobs:
         - master
     steps:
       - checkout
-      - run: |
-        npm install
-        npm install -g hexo-cli
-        hexo g
+      - run: 
+         command: |
+          npm install
+          npm install -g hexo-cli
+          hexo g
       - run: sudo apt-get update && sudo apt-get install rsync
       - deploy:
           name: deploy
