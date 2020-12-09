@@ -14,7 +14,7 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              ssh $SSH_USER@$SSH_IP
+              ssh root@101.201.125.78
               cd /root/blog/
               git clone -f
               hexo clean
