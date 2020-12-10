@@ -16,7 +16,7 @@ excerpt: '第一次建站始末'
 
 ### 文件目录
 
-<img src=".\image-20201210092650717.png" alt="image-20201210092718903" style="zoom:50%;" />
+<img src="image-20201210092650717.png" alt="image-20201210092718903" style="zoom:50%;" />
 
 # [hexo](https://hexo.io/zh-cn/)
 
@@ -27,17 +27,17 @@ hexo本身的坑并不多，但是有一个初学者可能难以理解的点
 
 + hexo generate 生成的静态网页是运行在服务器上的，所以当你在个人电脑上打开你会发现加载不了css的静态文件。
 
-<img src=".\image-20201210092718903.png" alt="image-20201210092718903" style="zoom:50%;" />
+<img src="image-20201210092718903.png" alt="image-20201210092718903" style="zoom:50%;" />
 
 这是因为css的引用是`/css/...`，在你的电脑上会被浏览器渲染成所在文件目录的根目录上，比如在E盘，他就会去`E:/css/`里面找，自然是找不到的，当你在服务器端运行，经过nginx路由分发，才能在web服务的根目录下找到css文件。所以这是正常的
 
-<img src=".\image-20201210092740581.png" alt="image-20201210092740581" style="zoom:50%;" />
+<img src="image-20201210092740581.png" alt="image-20201210092740581" style="zoom:50%;" />
 
 # [volantis](https://volantis.js.org/)
 
 [volantis](https://volantis.js.org/)是一个十分好看易用的开源hexo主题。volantis有非常完善的[文档](https://volantis.js.org/getting-started/)。按照文档一步步来就能完成自己博客的搭建。
 
-<img src=".\image-20201210092805147.png" alt="image-20201210092805147" style="zoom:50%;" />
+<img src="image-20201210092805147.png" alt="image-20201210092805147" style="zoom:50%;" />
 
 
 
