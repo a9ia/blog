@@ -2,39 +2,40 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
-    working_directory: ~/blog
+      - image: circleci/node:latest # 拉取带有node的image
+    working_directory: ~/blog # 指定虚拟服务器中工作目录
     steps:
-      - checkout
-      - run: sudo npm install
-      - run: sudo npm install hexo-cli -g
-      - run: hexo g
+      - checkout # 检查
+      - run: sudo npm install # 安装node modules
+      - run: sudo npm install hexo-cli -g # 安装hexo环境
+      - run: hexo g # 生成静态文件
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run: echo 'deploying'
-      - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install openssh-client
+      - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install openssh-client # 安装rsync所需
       - restore_cache:
           keys: 
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies
       - add_ssh_keys:
           fingerprints:
-            - "f9:a5:6b:ad:73:78:5b:50:ab:e7:30:ca:03:50:8d:59"
-      - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
+            - "f9:a5:6b:ad:73:78:5b:50:ab:e7:30:ca:03:50:8d:59" # 指定ssh目标的指纹
+      - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts # 将HOSTKEY加入服务器的known_hosts避免提示
       - deploy:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              rsync -avc ../blog/public $SSH_USER@$SSH_IP:/root/
+              rsync -avc ../blog/public $SSH_USER@$SSH_IP:/root/ 
             else
               echo "Not master branch, dry run only"
             fi
+      # 通过rsync 将../blog/中的目录传到/root/中去
       - run: echo 'deploy successfully'
-workflows:
+workflows: # 工作流，实际执行的代码
   version: 2
-  deploy:
+  deploy: # 操作名
     jobs:
-      - build
+      - build # 执行的job
   
