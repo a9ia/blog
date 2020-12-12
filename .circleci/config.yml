@@ -10,9 +10,9 @@ jobs:
       - run: sudo npm install hexo-cli -g # 安装hexo环境
       - run: npm install hexo-renderer-marked
       - run: hexo g # 生成静态文件
-      - run: ll 
+      - run: ls
       - run: cd public/Hello-World
-      - run: ll
+      - run: ls
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
