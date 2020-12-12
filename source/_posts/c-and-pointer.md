@@ -1,5 +1,6 @@
 ---
-layout: 'c title: pointer'
+layout: 'post'
+title: 'c语言教程'
 date: 2020-12-12 15:11:33
 tags: 'c pointer'
 excerpt: '摘录总结《c和指针》'
