@@ -13,9 +13,7 @@ jobs:
       - run: ls
       - run: 
           command: |
-            cd ./public/
-            ls
-            cd ./hello-world
+            cd ./source\_posts
             ls
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
