@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/blog # 指定虚拟服务器中工作目录
     steps:
       - checkout # 检查
-      - run: sudo npm install # 安装node modules
+      - run: sudo yarn # 安装node modules
       - run: sudo npm install hexo-cli -g # 安装hexo环境
       - run: hexo g # 生成静态文件
       - save_cache:
