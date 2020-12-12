@@ -11,7 +11,7 @@ jobs:
       - run: npm install hexo-renderer-marked
       - run: hexo g # 生成静态文件
       - run: ls
-      - run: cd public/Hello-World
+      - run: cd ../blog/public/Hello-World
       - run: ls
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
