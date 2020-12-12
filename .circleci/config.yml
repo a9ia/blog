@@ -15,7 +15,7 @@ jobs:
           command: |
             cd ./source/_posts
             ls
-            cd ./hello-world
+            cd ./Hello-World
             ls
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
