@@ -1,7 +1,7 @@
 ---
 title: 'Hello, World!'
 date: 2020-12-09 08:19:35
-tags: 'node 生日快乐 hexo volantis nginx circleCI'
+tags: 'node hexo volantis circleCI'
 excerpt: '第一次建站始末'
 
 ---
