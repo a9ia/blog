@@ -196,3 +196,26 @@ search:
     queryKey:
   baidu:
     apiId:
+
+comments:
+  title: <i class='fas fa-comments'></i> 评论
+  subtitle:
+  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover
+  # Valine
+  # https://valine.js.org/
+  valine:
+    appId: N4RsHiQdDANhqzMEjGVxUoaL-gzGzoHsz
+    appKey: TbFqi5EMpqvEcCgs6NW2sxrU
+    # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
+    path: # 全局评论地址
+    placeholder: 快来评论吧~  # 评论占位提示
+    meta: nick,mail,link # valine comment header info
+    requiredFields: ['nick','mail']
+    enableQQ: true # Unstable avatar link
+    recordIP: false # Record commenter IP
+    avatar: robohash # gravatar style https://valine.js.org/avatar
+    pageSize: 10 # comment list page size
+    lang: zh-cn
+    highlight: true
+    visitor: true
+    mathJax: false
