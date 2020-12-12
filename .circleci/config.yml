@@ -7,17 +7,17 @@ jobs:
     steps:
       - checkout # 检查
       - run: sudo yarn # 安装node modules
-      - run: sudo npm install hexo-cli -g # 安装hexo环境
+      - run: sudo yarn install hexo-cli -g # 安装hexo环境
       - run: hexo g # 生成静态文件
       - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run: echo 'deploying'
       - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install openssh-client # 安装rsync所需
       - restore_cache:
           keys: 
-            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}
             - v1-dependencies
       - add_ssh_keys:
           fingerprints:
