@@ -6,19 +6,20 @@ jobs:
     working_directory: ~/blog # 指定虚拟服务器中工作目录
     steps:
       - checkout # 检查
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: sudo yarn # 安装node modules
       - run: sudo yarn global add hexo-cli # 安装hexo环境
       - run: hexo g # 生成静态文件
       - save_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
+            - ~/.cache/yarn
       - run: echo 'deploying'
       - run: sudo apt-get update && sudo apt-get install rsync && sudo apt-get install openssh-client # 安装rsync所需
-      - restore_cache:
-          keys: 
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies
       - add_ssh_keys:
           fingerprints:
             - "f9:a5:6b:ad:73:78:5b:50:ab:e7:30:ca:03:50:8d:59" # 指定ssh目标的指纹
