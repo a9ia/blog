@@ -32,11 +32,11 @@ cover:
     - name: git
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: https://gitee.com/a9ia
+      url: https://github.com/a9ia
     - name: 源码
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: https://gitee.com/a9ia/hexo_blog
+      url: https://github.com/a9ia/blog
     - name: 关于我
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
@@ -165,7 +165,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
+      avatar: https://cdn.jsdelivr.net/gh/a9ia/image//blog/v2-1c684fa8915d922256e4cb71c34ceb22.jpg
       shape: rectangle # circle, rectangle
       url: /about/
       title: A9ia
