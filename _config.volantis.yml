@@ -204,8 +204,8 @@ comments:
   # Valine
   # https://valine.js.org/
   valine:
-    appId: N4RsHiQdDANhqzMEjGVxUoaL-gzGzoHsz
-    appKey: TbFqi5EMpqvEcCgs6NW2sxrU
+    # appId: N4RsHiQdDANhqzMEjGVxUoaL-gzGzoHsz
+    # appKey: TbFqi5EMpqvEcCgs6NW2sxrU
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址
     placeholder: 快来评论吧~  # 评论占位提示
