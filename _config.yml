@@ -14,7 +14,7 @@ favicon: 'https://cdn.jsdelivr.net/gh/a9ia/image//blog/v2-1c684fa8915d922256e4cb
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://101.201.125.78/
+url: https://www.a9ia.top/
 root: /
 permalink: :title/
 permalink_defaults:
