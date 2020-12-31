@@ -236,8 +236,9 @@ site_footer:
   # analytics using leancloud
   analytics: >
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
-    <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
+    <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span> 
+    <div style="width:300px;margin:0 auto; padding:20px 0;"> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37078302000480" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="https://cdn.jsdelivr.net/gh/a9ia/image//blog/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">鲁公网安备 37078302000480号</p></a> </div>
   # site copyright
-  copyright: '[Copyright © 2017-2020 鲁ICP备2020048555号-1](/)'
+  copyright: '[Copyright © 2017-2020 鲁ICP备2020048555号-1 ](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
